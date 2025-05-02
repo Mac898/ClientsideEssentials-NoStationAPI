@@ -62,6 +62,13 @@ public class Config {
         @ConfigEntry(name = "Add Slime Chunk To Debug Overlay")
         public Boolean ADD_SLIME_CHUNK = true;
 
+        @ConfigEntry(
+                name = "Additions To Overlay Y Offset",
+                maxLength = 4096,
+                minLength = -4096
+        )
+        public Integer OVERLAY_ADDITIONS_Y_OFFSET = 0;
+
         @ConfigEntry(name = "Disable ID Tags")
         public Boolean DISABLE_ID_TAGS = true;
 

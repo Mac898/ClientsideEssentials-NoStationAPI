@@ -39,13 +39,14 @@ public class OverlayMixin extends DrawContext {
 	)
 	public void clientsideEssentials_render(float bl, boolean i, int j, int par4, CallbackInfo ci)  {
 		TextRenderer var8 = this.minecraft.textRenderer;
+		int yOffset = Config.config.GRAPHICS_CONFIG.OVERLAY_ADDITIONS_Y_OFFSET;
 
 		if (Config.config.GRAPHICS_CONFIG.ADD_TOTAL_PLAY_TIME) {
 			long realHoursPlayed = Duration.ofSeconds(minecraft.stats.get(Stats.PLAY_ONE_MINUTE) / 20).toHours();
 			if (1 == realHoursPlayed) {
-				var8.drawWithShadow("Play Time: " + realHoursPlayed + " hour", 2, 96, 14737632);
+				var8.drawWithShadow("Play Time: " + realHoursPlayed + " hour", 2, (96 + yOffset), 14737632);
 			} else {
-				var8.drawWithShadow("Play Time: " + realHoursPlayed + " hours", 2, 96, 14737632);
+				var8.drawWithShadow("Play Time: " + realHoursPlayed + " hours", 2, (96 + yOffset), 14737632);
 			}
 		}
 
@@ -114,19 +115,19 @@ public class OverlayMixin extends DrawContext {
 			}
 
 			if (Config.config.GRAPHICS_CONFIG.ADD_LIGHT_LEVEL) {
-				var8.drawWithShadow("Light Level: " + lightLevel, 2, 112, 14737632);
+				var8.drawWithShadow("Light Level: " + lightLevel, 2, (112 + yOffset), 14737632);
 			}
 
 			if (Config.config.GRAPHICS_CONFIG.ADD_BIOME_TYPE) {
-				var8.drawWithShadow("Biome: " + biomeName, 2, 120, 14737632);
+				var8.drawWithShadow("Biome: " + biomeName, 2, (120 + yOffset), 14737632);
 			}
 
 			if (Config.config.GRAPHICS_CONFIG.ADD_DAY_COUNTER) {
-				var8.drawWithShadow("Day: " + dayCount, 2, 128, 14737632);
+				var8.drawWithShadow("Day: " + dayCount, 2, (128 + yOffset), 14737632);
 			}
 
 			if (Config.config.GRAPHICS_CONFIG.ADD_SLIME_CHUNK) {
-				var8.drawWithShadow("Slime Chunk: " + isSlimeChunk, 2, 136, 14737632);
+				var8.drawWithShadow("Slime Chunk: " + isSlimeChunk, 2, (136 + yOffset), 14737632);
 			}
 		}
 	}
