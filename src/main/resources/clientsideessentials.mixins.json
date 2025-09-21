@@ -5,18 +5,11 @@
   "compatibilityLevel": "JAVA_8",
   "plugin": "com.github.telvarost.clientsideessentials.ClientsideEssentialsMixinPlugin",
   "mixins": [
+    "TranslationStorageMixin"
   ],
   "server": [
   ],
   "client": [
-    "brightness.GL11Mixin",
-    "brightness.RenderHelperMixin",
-    "brightness.TessellatorMixin",
-    "brightness.TextureManagerMixin",
-    "options.GameOptionsMixin",
-    "options.OptionMixin",
-    "options.OptionsScreenMixin",
-    "options.VideoSettingsMixin",
     "AbstractClientPlayerMixin",
     "BipedRendererMixin",
     "BowItemMixin",
@@ -27,16 +20,24 @@
     "GameRendererMixin",
     "ItemInstanceMixin",
     "LivingEntityRendererMixin",
-    "MinecraftKeyBindingMixin",
     "MinecartMixin",
-    "MinecraftSoundMixin",
+    "MinecraftKeyBindingMixin",
     "MinecraftMixin",
+    "MinecraftSoundMixin",
     "OverlayMixin",
     "PlayerRendererMixin",
     "SheepMixin",
     "SkeletonModelMixin",
     "StoneSlabItemMixin",
-    "WorldRendererMixin"
+    "WorldRendererMixin",
+    "brightness.GL11Mixin",
+    "brightness.RenderHelperMixin",
+    "brightness.TessellatorMixin",
+    "brightness.TextureManagerMixin",
+    "options.GameOptionsMixin",
+    "options.OptionMixin",
+    "options.OptionsScreenMixin",
+    "options.VideoSettingsMixin"
   ],
   "injectors": {
     "defaultRequire": 1
