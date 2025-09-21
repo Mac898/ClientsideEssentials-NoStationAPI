@@ -1,6 +1,5 @@
 package com.github.telvarost.clientsideessentials.mixin;
 
-import com.github.telvarost.clientsideessentials.events.init.KeyBindingListener;
 import com.github.telvarost.clientsideessentials.ModHelper;
 import com.github.telvarost.clientsideessentials.ModOptions;
 import net.fabricmc.api.EnvType;
@@ -60,7 +59,7 @@ public abstract class GameRendererMixin {
         }
 
         if (ModHelper.ModHelperFields.IS_MOJANGFIX_LOADED) {
-            if (Keyboard.isKeyDown(KeyBindingListener.zoom.code)) {
+            if (Keyboard.isKeyDown(Keyboard.KEY_LCONTROL)) {
                 fov /= 4F;
                 client.options.cinematicMode = true;
             } else {

@@ -2,7 +2,6 @@ package com.github.telvarost.clientsideessentials.mixin;
 
 import com.github.telvarost.clientsideessentials.Config;
 
-import com.github.telvarost.clientsideessentials.events.init.KeyBindingListener;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.Minecraft;
@@ -13,6 +12,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.screen.GenericContainerScreenHandler;
 import net.minecraft.world.World;
+import org.lwjgl.input.Keyboard;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -40,7 +40,7 @@ public class AbstractClientPlayerMixin extends PlayerEntity {
 		if (  (Config.config.SHIFT_EXIT_VEHICLES)
 		   && (player.vehicle != null)
 		   && (state)
-		   && (key == KeyBindingListener.dismount.code)
+		   && (key == Keyboard.KEY_LSHIFT)
 		) {
 			player.setVehicle(null);
 		}

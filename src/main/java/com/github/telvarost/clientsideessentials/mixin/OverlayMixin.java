@@ -7,12 +7,10 @@ import net.minecraft.stat.Stats;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
-import net.modificationstation.stationapi.api.entity.player.PlayerHelper;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.Redirect;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.font.TextRenderer;
@@ -54,7 +52,7 @@ public class OverlayMixin extends DrawContext {
 		   || Config.config.GRAPHICS_CONFIG.ADD_BIOME_TYPE
 		   || Config.config.GRAPHICS_CONFIG.ADD_DAY_COUNTER
 		) {
-			PlayerEntity player = PlayerHelper.getPlayerFromGame();
+			PlayerEntity player = MinecraftMixin.getInstance().player;
 			int lightLevel = 0;
 			String biomeName = "Unknown";
 			long dayCount = 0;

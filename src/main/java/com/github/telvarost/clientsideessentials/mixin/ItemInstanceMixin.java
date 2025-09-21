@@ -2,10 +2,10 @@ package com.github.telvarost.clientsideessentials.mixin;
 
 import com.github.telvarost.clientsideessentials.Config;
 import java.util.Random;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.modificationstation.stationapi.api.entity.player.PlayerHelper;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -28,7 +28,7 @@ public class ItemInstanceMixin {
     )
     public void clientsideEssentials_applyDamage(int i, Entity entityBase, CallbackInfo ci) {
 		if(Config.config.SOUND_CONFIG.ADD_ITEM_BREAK_SOUND) {
-			PlayerEntity player = PlayerHelper.getPlayerFromGame();
+			PlayerEntity player = MinecraftMixin.getInstance().player;
 
 			if (null != player)
 			{

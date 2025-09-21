@@ -1,10 +1,10 @@
 package com.github.telvarost.clientsideessentials.mixin;
 
-import com.github.telvarost.clientsideessentials.events.init.KeyBindingListener;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerInventory;
+import org.lwjgl.input.Keyboard;
 import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -24,36 +24,36 @@ public class MinecraftKeyBindingMixin {
     // F1
     @ModifyConstant(method = "tick", constant = @Constant(intValue = 59))
     public int modifyHideHudKeybind(int constant){
-        return KeyBindingListener.hideHUD.code;
+        return Keyboard.KEY_F1;
     }
 
     // F2
     @ModifyConstant(method = "handleScreenshotKey", constant = @Constant(intValue = 60))
     public int modifyTakeScreenshotKeybind(int constant){
-        return KeyBindingListener.takeScreenshot.code;
+        return Keyboard.KEY_F2;
     }
 
     // F3
     @ModifyConstant(method = "tick", constant = @Constant(intValue = 61))
     public int modifyDebugHudKeybind(int constant){
-        return KeyBindingListener.debugHud.code;
+        return Keyboard.KEY_F3;
     }
 
     // F5
     @ModifyConstant(method = "tick", constant = @Constant(intValue = 63))
     public int modifyThirdPersonKeybind(int constant){
-        return KeyBindingListener.thirdPerson.code;
+        return Keyboard.KEY_F5;
     }
 
     // F6
     @ModifyConstant(method = "tick", constant = @Constant(intValue = 66))
     public int modifyCinematicCameraKeybind(int constant){
-        return KeyBindingListener.cinematicCamera.code;
+        return Keyboard.KEY_F6;
     }
 
     // F11
     @ModifyConstant(method = "tick", constant = @Constant(intValue = 87))
     public int modifyToggleFullscreenKeybind(int constant){
-        return KeyBindingListener.toggleFullscreen.code;
+        return Keyboard.KEY_F11;
     }
 }

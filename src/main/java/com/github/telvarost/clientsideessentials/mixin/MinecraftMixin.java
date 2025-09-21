@@ -7,8 +7,11 @@ import java.awt.geom.AffineTransform;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.entity.player.ClientPlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Mutable;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.gen.Accessor;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
@@ -17,7 +20,16 @@ import net.minecraft.client.gui.screen.Screen;
 
 @Environment(EnvType.CLIENT)
 @Mixin(Minecraft.class)
-public class MinecraftMixin {
+public abstract class MinecraftMixin {
+
+	@Mutable
+	@Accessor("INSTANCE")
+	static Minecraft getInstance() {
+		throw new AssertionError();
+	}
+
+	@Accessor("player")
+	abstract ClientPlayerEntity getPlayer();
 
 	@Shadow public Canvas canvas;
 

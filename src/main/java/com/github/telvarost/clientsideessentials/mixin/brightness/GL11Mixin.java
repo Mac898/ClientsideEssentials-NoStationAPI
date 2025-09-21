@@ -11,15 +11,15 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 @Mixin(GL11.class)
 public abstract class GL11Mixin {
 
-    @Shadow
+    @Shadow(remap = false)
     static void nglColor4f(float red, float green, float blue, float alpha, long function_pointer) {
     }
 
-    @Shadow
+    @Shadow(remap = false)
     static void nglColor3f(float red, float green, float blue, long function_pointer) {
     }
 
-    @Shadow
+    @Shadow(remap = false)
     static void nglClearColor(float red, float green, float blue, float alpha, long function_pointer) {
     }
 
