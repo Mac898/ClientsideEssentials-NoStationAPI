@@ -21,6 +21,7 @@
     "ItemInstanceMixin",
     "LivingEntityRendererMixin",
     "MinecartMixin",
+    "MinecraftAccessor",
     "MinecraftKeyBindingMixin",
     "MinecraftMixin",
     "MinecraftSoundMixin",

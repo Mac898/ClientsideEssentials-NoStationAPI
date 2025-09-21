@@ -28,7 +28,7 @@ public class ItemInstanceMixin {
     )
     public void clientsideEssentials_applyDamage(int i, Entity entityBase, CallbackInfo ci) {
 		if(Config.config.SOUND_CONFIG.ADD_ITEM_BREAK_SOUND) {
-			PlayerEntity player = MinecraftMixin.getInstance().player;
+			PlayerEntity player = MinecraftAccessor.getInstance().player;
 
 			if (null != player)
 			{

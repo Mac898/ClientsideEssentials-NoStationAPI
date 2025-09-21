@@ -52,7 +52,7 @@ public class OverlayMixin extends DrawContext {
 		   || Config.config.GRAPHICS_CONFIG.ADD_BIOME_TYPE
 		   || Config.config.GRAPHICS_CONFIG.ADD_DAY_COUNTER
 		) {
-			PlayerEntity player = MinecraftMixin.getInstance().player;
+			PlayerEntity player = MinecraftAccessor.getInstance().player;
 			int lightLevel = 0;
 			String biomeName = "Unknown";
 			long dayCount = 0;
